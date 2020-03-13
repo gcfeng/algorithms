@@ -28,5 +28,6 @@
     
 ## 字符串算法
 * [Brute Force朴素匹配](src/main/java/string/BruteForce.java) O(n * m)
-* [Rabin Karp算法](src/main/java/string/RabinKarp.java) O(n)，极端情况下会退化为O(n * m)
-* [Boyer Moore算法](src/main/java/string/BoyerMoore.java) 时间复杂度不超过O(3n)
+* [Rabin Karp匹配算法](src/main/java/string/RabinKarp.java) O(n)，极端情况下会退化为O(n * m)
+* [Boyer Moore匹配算法](src/main/java/string/BoyerMoore.java) 时间复杂度不超过O(3n)
+* [KMP匹配算法](src/main/java/string/KMP.java) O(n + m)
