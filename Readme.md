@@ -12,6 +12,7 @@
 * [红黑树](src/main/java/datastructure/balancedtree/RedBlackTree.java)
 * [跳表](src/main/java/datastructure/skiplist/SkipList.java)
 * [散列表](src/main/java/datastructure/hashtable/HashTable.java)
+* [Trie树](src/main/java/datastructure/trie/Trie.java)
 
 ## 排序算法
 * [冒泡排序](src/main/java/sort/BubbleSort.java)  O(n^2)
