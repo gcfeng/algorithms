@@ -1,4 +1,4 @@
-package datastructure.trie;
+package string;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,6 +6,8 @@ import java.util.Map;
 /**
  * Trie树，也称为字典树、前缀树等，用来解决在一组字符串集合中快速查找某个字符串的问题，
  * 本质是利用字符串之间的公共前缀，将重复的前缀合并在一起。通常的应用场景是搜索提示等。
+ *
+ * 构建Trie树时间复杂度为O(n)，查找时间复杂度为O(k)，k是主串长度
  */
 public class Trie {
     // 根结点不存储值
