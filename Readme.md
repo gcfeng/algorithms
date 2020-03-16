@@ -21,10 +21,6 @@
 * [快速排序](src/main/java/sort/QuickSort.java) O(nlog(n))
 * [计数排序](src/main/java/sort/CountingSort.java) O(n)
 * [堆排序](src/main/java/sort/HeapSort.java) O(nlog(n))
-
-## 查找算法
-* [二分查找](src/main/java/search/BinarySearch.java)
-    * [求解平方根](src/main/java/search/BinarySearch.java)
     
 ## 字符串算法
 * [Brute Force朴素匹配](src/main/java/string/BruteForce.java) O(n * m)
@@ -33,3 +29,8 @@
 * [KMP匹配算法](src/main/java/string/KMP.java) O(n + m)
 * [Trie树，多模字符串匹配](src/main/java/string/Trie.java) 构建Trie树时间复杂度为O(n)，查找时间复杂度为O(k)，k是查找串长度
 * [AC自动机，多模字符串匹配](src/main/java/string/AC.java) 匹配过程时间复杂度O(n)
+
+## 算法问题
+* [二分查找](src/main/java/problems/BinarySearch.java)
+    * [求解平方根](src/main/java/problems/BinarySearch.java)
+* [八皇后问题](src/main/java/problems/EightQueens.java) 回溯算法

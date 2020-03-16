@@ -1,4 +1,4 @@
-package search;
+package problems;
 
 /**
  * 二分查找
