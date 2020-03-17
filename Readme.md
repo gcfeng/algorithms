@@ -35,3 +35,4 @@
     * [求解平方根](src/main/java/problems/BinarySearch.java)
 * [八皇后问题](src/main/java/problems/EightQueens.java) 回溯算法
 * [0-1背包问题](src/main/java/problems/Backpack.java) 回溯算法，参照runBT函数
+* [0-1背包问题](src/main/java/problems/Backpack.java) 动态规划，参照runDP函数
