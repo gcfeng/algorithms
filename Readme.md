@@ -32,6 +32,7 @@
 
 ## 图算法
 * [拓扑排序](src/main/java/graph/Topology.java)
+* [Dijkstra最短路径算法](src/main/java/graph/Dijkstra.java)
 
 ## 算法问题
 * [二分查找](src/main/java/problems/BinarySearch.java)
