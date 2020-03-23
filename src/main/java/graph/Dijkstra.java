@@ -19,7 +19,7 @@ public class Dijkstra {
     private Map<Integer, List<Edge>> adj;
 
     // 边
-    private class Edge {
+    private static class Edge {
         int sid;    // 边的起始顶点编号
         int tid;    // 边的终止顶点编号
         int w;      // 权重
@@ -32,7 +32,7 @@ public class Dijkstra {
     }
 
     // 顶点，用于记录起始顶点到该顶点的距离
-    private class Vertex implements Comparable<Vertex> {
+    private static class Vertex implements Comparable<Vertex> {
         int id;     // 顶点编号
         int dist;   // 记录从起始顶点到这个顶点的距离
 
@@ -95,6 +95,7 @@ public class Dijkstra {
         }
 
         // 构建小顶堆
+        // 用来记录已经遍历到的顶点以及这个顶点与起始顶点的路径长度
         MinHeap<Vertex> heap = new MinHeap<>(n);
         // 标记是否进入过队列
         Map<Integer, Boolean> inqueue = new HashMap<>();
