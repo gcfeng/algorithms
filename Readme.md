@@ -38,8 +38,13 @@
 ## 算法问题
 * [二分查找](src/main/java/problems/BinarySearch.java)
     * [求解平方根](src/main/java/problems/BinarySearch.java)
+
+### 回溯算法
+* [全排列](src/main/java/problems/Permutation.java) 回溯算法，时间复杂度O(n!)
 * [八皇后问题](src/main/java/problems/EightQueens.java) 回溯算法
 * [0-1背包问题](src/main/java/problems/Backpack.java) 回溯算法，参照runBT函数
-* [0-1背包问题](src/main/java/problems/Backpack.java) 动态规划，参照runDP函数
+
+### 动态规划
+* [0-1背包问题](src/main/java/problems/Backpack.java) 参照runDP函数
 * [斐波那契数](src/main/java/problems/Fibonacci.java) [LeetCode 509](https://leetcode-cn.com/problems/fibonacci-number/)
 * [零钱兑换](src/main/java/problems/CoinChange.java) [LeetCode 322](https://leetcode-cn.com/problems/coin-change/)
