@@ -40,8 +40,8 @@
     * [求解平方根](src/main/java/problems/BinarySearch.java)
 
 ### 回溯算法
-* [全排列](src/main/java/problems/Permutation.java) 回溯算法，时间复杂度O(n!)
-* [八皇后问题](src/main/java/problems/EightQueens.java) 回溯算法
+* [全排列](src/main/java/problems/Permutation.java) 时间复杂度O(n!)。[LeetCode 46](https://leetcode-cn.com/problems/permutations/)
+* [N皇后问题](src/main/java/problems/NQueens.java) [LeetCode 51](https://leetcode-cn.com/problems/n-queens/)
 * [0-1背包问题](src/main/java/problems/Backpack.java) 回溯算法，参照runBT函数
 
 ### 动态规划
