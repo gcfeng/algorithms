@@ -8,6 +8,9 @@ import java.util.LinkedList;
  * https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/
  */
 public class MinDepth {
+    /**
+     * BFS算法
+     */
     public int solution(TreeNode root) {
         if (root == null) return 0;
         LinkedList<TreeNode> queue = new LinkedList<>();
