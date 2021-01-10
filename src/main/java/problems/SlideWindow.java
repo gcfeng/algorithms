@@ -1,6 +1,8 @@
 package problems;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * 滑动窗口
@@ -81,7 +83,7 @@ public class SlideWindow {
     public boolean checkInclusion(String s1, String s2) {
         // window表示当前窗口字符的出现次数
         HashMap<Character, Integer> window = new HashMap<>();
-        // need表示t中每次字符的出现次数
+        // need表示s1中每次字符的出现次数
         HashMap<Character, Integer> need = new HashMap<>();
         for (Character ch : s1.toCharArray()) {
             need.put(ch, need.getOrDefault(ch, 0) + 1);
@@ -123,6 +125,59 @@ public class SlideWindow {
         return false;
     }
 
+    /**
+     * 找到字符串中所有字母异位词
+     * 给定一个字符串 s 和一个非空字符串 p，找到 s 中所有是 p 的字母异位词的子串，返回这些子串的起始索引。
+     *
+     * https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/
+     */
+    public List<Integer> findAnagrams(String s, String p) {
+        // window表示当前窗口字符的出现次数
+        HashMap<Character, Integer> window = new HashMap<>();
+        // need表示p中每次字符的出现次数
+        HashMap<Character, Integer> need = new HashMap<>();
+        for (Character ch : p.toCharArray()) {
+            need.put(ch, need.getOrDefault(ch, 0) + 1);
+        }
+
+        List<Integer> list = new ArrayList<>();
+        int left = 0, right = 0;
+        // 表示窗口中满足need条件的字符个数
+        int valid = 0;
+        while (right < s.length()) {
+            // c表示即将移入窗口的字符
+            char c = s.charAt(right);
+            // 右移窗口
+            right++;
+            // 更新窗口的数据
+            if (need.containsKey(c)) {
+                window.put(c, window.getOrDefault(c, 0) + 1);
+                if (need.get(c).equals(window.get(c))) {
+                    valid++;
+                }
+                if (valid == need.size()) {
+                    list.add(left);
+                }
+            }
+
+            while (right - left >= p.length()) {
+                // d表示即将移除窗口的字符
+                char d = s.charAt(left);
+                // 右移窗口
+                left++;
+                // 更新窗口
+                if (need.containsKey(d)) {
+                    if (need.get(d).equals(window.getOrDefault(d, 0))) {
+                        valid--;
+                    }
+                    window.put(d, window.getOrDefault(d, 0) - 1);
+                }
+            }
+        }
+
+        return list;
+    }
+
     public static void main(String[] args) {
         SlideWindow slideWindow = new SlideWindow();
 
@@ -134,5 +189,9 @@ public class SlideWindow {
         System.out.println(slideWindow.checkInclusion("abcdxabcde", "abcdeabcdx"));   // true
         System.out.println(slideWindow.checkInclusion("ab", "eidbaooo"));   // true
         System.out.println(slideWindow.checkInclusion("ab", "eidboaoo"));   // false
+
+        // 找到字符串中所有字母异位词
+        System.out.println(slideWindow.findAnagrams("cbaebabacd", "abc"));  // [0, 6]
+        System.out.println(slideWindow.findAnagrams("abab", "ab"));  // [0, 1, 2]
     }
 }
