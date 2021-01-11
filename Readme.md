@@ -61,3 +61,4 @@
 * [最小覆盖子串](src/main/java/problems/SlideWindow.java) [LeetCode 76](https://leetcode-cn.com/problems/minimum-window-substring/) 参照minWindow方法
 * [字符串排列](src/main/java/problems/SlideWindow.java) [LeetCode 567](https://leetcode-cn.com/problems/permutation-in-string/) 参照checkInclusion方法
 * [找到字符串中所有字母异位词](src/main/java/problems/SlideWindow.java) [LeetCode 438](https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/) 参照findAnagrams方法
+* [无重复字符的最长子串](src/main/java/problems/SlideWindow.java) [LeetCode 3](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) 参照lengthOfLongestSubstring方法

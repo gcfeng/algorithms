@@ -178,6 +178,36 @@ public class SlideWindow {
         return list;
     }
 
+    /**
+     * 无重复字符的最长子串
+     * 给定一个字符串，请你找出其中不含有重复字符的最长子串的长度。
+     *
+     * https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+     */
+    public int lengthOfLongestSubstring(String s) {
+        if (s.isEmpty()) return 0;
+        // 记录当前窗口的字符
+        HashMap<Character, Integer> window = new HashMap<>();
+        int left = 0, right = 0;
+        // 记录最长子串的长度
+        int len = 0;
+        while (right < s.length()) {
+            // 要进入到窗口的字符
+            char c = s.charAt(right);
+            right++;
+            // 更新窗口数据
+            window.put(c, window.getOrDefault(c, 0) + 1);
+            // 出现了重复字符，收缩左窗口
+            while (window.get(c) > 1) {
+                char d = s.charAt(left);
+                left++;
+                window.put(d, Math.max(window.getOrDefault(d, 0) - 1, 0));
+            }
+            len = Math.max(len, right - left);
+        }
+        return len;
+    }
+
     public static void main(String[] args) {
         SlideWindow slideWindow = new SlideWindow();
 
@@ -193,5 +223,10 @@ public class SlideWindow {
         // 找到字符串中所有字母异位词
         System.out.println(slideWindow.findAnagrams("cbaebabacd", "abc"));  // [0, 6]
         System.out.println(slideWindow.findAnagrams("abab", "ab"));  // [0, 1, 2]
+
+        System.out.println(slideWindow.lengthOfLongestSubstring("aab")); // 2
+        System.out.println(slideWindow.lengthOfLongestSubstring("abcabcbb")); // 3
+        System.out.println(slideWindow.lengthOfLongestSubstring("bbbbb")); // 1
+        System.out.println(slideWindow.lengthOfLongestSubstring("pwwkew")); // 3
     }
 }
