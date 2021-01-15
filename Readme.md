@@ -50,6 +50,7 @@
 * [0-1背包问题](src/main/java/problems/Backpack.java) 参照runDP函数
 * [斐波那契数](src/main/java/problems/Fibonacci.java) [LeetCode 509](https://leetcode-cn.com/problems/fibonacci-number/)
 * [零钱兑换](src/main/java/problems/CoinChange.java) [LeetCode 322](https://leetcode-cn.com/problems/coin-change/)
+* [股票买卖](src/main/java/problems/Stock.java)
 
 ### 双指针
 * [环形链表](src/main/java/problems/TwoPointers.java) [LeetCode 141](https://leetcode-cn.com/problems/linked-list-cycle/) 参照hasCycle方法
