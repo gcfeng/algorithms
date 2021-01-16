@@ -1,11 +1,15 @@
 package problems;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 打家劫舍问题
  */
 public class HouseRobber {
+    Map<TreeNode, Integer> memo = new HashMap<>();
+
     /**
      * 打家劫舍
      * 解答：
@@ -61,9 +65,63 @@ public class HouseRobber {
         );
     }
 
+    /**
+     * 打家劫舍。房子成二叉树形状
+     *
+     * https://leetcode-cn.com/problems/house-robber-iii/
+     */
+    public int rob3(TreeNode root) {
+        if (root == null) return 0;
+        // 利用备忘录来消除子问题
+        if (memo.containsKey(root)) {
+            return memo.get(root);
+        }
+        // 抢，然后去下下家
+        int doRob = root.val
+                + (root.left == null ? 0 : rob3(root.left.left) + rob3(root.left.right))
+                + (root.right == null ? 0 : rob3(root.right.left) + rob3(root.right.right));
+        // 不抢，直接去下家
+        int notRob = rob3(root.left) + rob3(root.right);
+
+        int res = Math.max(doRob, notRob);
+        memo.put(root, res);
+        return res;
+    }
+
+    private class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
+    }
+
+    // 给定值序列构造一棵树
+    private TreeNode buildTree(Integer[] values) {
+        TreeNode[] nodes = new TreeNode[values.length];
+        for (int i = 0; i < values.length; i++) {
+            if (i == 0 && values[i] != null) {
+                nodes[0] = new TreeNode(values[i]);
+            } else if (values[i] != null) {
+                nodes[i] = new TreeNode(values[i]);
+                int parentIndex = (i - 1) / 2;
+                if ((i - 1) % 2 == 0) { // left
+                    nodes[parentIndex].left = nodes[i];
+                } else { // right
+                    nodes[parentIndex].right = nodes[i];
+                }
+            }
+        }
+        return nodes[0];
+    }
+
     public static void main(String[] args) {
         HouseRobber robber = new HouseRobber();
+        // 题目1
         System.out.println(robber.rob1(new int[]{1,2,3,1}));    // 4
+        // 题目2
         System.out.println(robber.rob2(new int[]{2,3,2}));    // 3
+        // 题目3
+        TreeNode root = robber.buildTree(new Integer[]{3,2,3,null,3,null,1});
+        System.out.println(robber.rob3(root));  // 7
     }
 }
