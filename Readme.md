@@ -52,6 +52,7 @@
 * [零钱兑换](src/main/java/problems/CoinChange.java) [LeetCode 322](https://leetcode-cn.com/problems/coin-change/)
 * [股票买卖](src/main/java/problems/Stock.java)
 * [打家劫舍](src/main/java/problems/HouseRobber.java)
+* [最长递增子序列](src/main/java/problems/LIS.java)
 
 ### 双指针
 * [环形链表](src/main/java/problems/TwoPointers.java) [LeetCode 141](https://leetcode-cn.com/problems/linked-list-cycle/) 参照hasCycle方法
