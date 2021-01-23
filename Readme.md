@@ -39,7 +39,8 @@
 * [二分查找](src/main/java/problems/BinarySearch.java)
     * [求解平方根](src/main/java/problems/BinarySearch.java)
 * [二叉树的最小深度](src/main/java/problems/MinDepth.java) BFS算法。[LeetCode 111](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/)
-* [打开转盘锁](src/main/java/problems/OpenLock.java) BFS算法。[LeetCode 752](https://leetcode-cn.com/problems/open-the-lock/) 
+* [打开转盘锁](src/main/java/problems/OpenLock.java) BFS算法。[LeetCode 752](https://leetcode-cn.com/problems/open-the-lock/)
+* [大数相乘](src/main/java/problems/Multiply.java) 
 
 ### 回溯算法
 * [全排列](src/main/java/problems/Permutation.java) 时间复杂度O(n!)。[LeetCode 46](https://leetcode-cn.com/problems/permutations/)
